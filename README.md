@@ -1,5 +1,5 @@
 # [yudete](https://github.com/yudete) / sato5128F
-Convert sentences in Japanese into さとちゃん formatted
+Convert sentences in Japanese into さとちゃん format
 
 ## Dependencies
 * MeCab
