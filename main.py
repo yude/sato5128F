@@ -2,7 +2,7 @@ import MeCab
 import re
 i = 0
 # 元の文章
-data = "お家に、着いた。今から、愛美ちゃんと、通話をしながら、ゲームキューブで、スターフォックス、アサルトを、プレイする。"
+data = "昨日、愛美ちゃんと電話で、もう少しコロナウイルスが、落ち着いたら、伊豆に旅行に行こうと、いう話になった。サフィール踊り子号で、行く予定だ。"
 
 # 元の文章を表示する
 print("変換対象の文章 (整形前): \n" + data)
@@ -33,8 +33,8 @@ print("\n結果: ")
 # 結果を出力する
 for item in list_output_words:
     print(item, end='')
-    if list_output_words_part[i] == "25":
-            print("。", end='')
+    if (list_output_words_part[i - 1] == "25") and list_output_words_part[i] == "67":
+            print("、", end='')
     if i > 0:
         if list_output_words_part[i - 1] == "38" and list_output_words_part[i - 1] == "41":
             print("、", end='')
@@ -44,12 +44,20 @@ for item in list_output_words:
             print("、", end='')
         if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "67":
             print("、", end='')
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "41":
+            print("、", end='')
+        
     if i > 1:
         if list_output_words_part[i] == "13" and list_output_words_part[i - 2] == "44":
+            if list_output_words_part[i + 1] != "36":
+                print("、", end='')
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "36" and list_output_words_part[i - 2] == "13":
             print("、", end='')
         if list_output_words_part[i] == "18" and list_output_words_part[i - 1] == "31" and list_output_words_part[i - 2] == "13":
             print("、", end='')
-        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "41":
+        if list_output_words_part[i] == "31" and list_output_words_part[i - 1] == "36" and list_output_words_part[i - 2] == "25":
+            print("。", end='')
+        if list_output_words_part[i] == "25" and list_output_words_part[i - 1] == "31" and list_output_words_part[i + 1] != "15" and list_output_words_part[i + 2] != "13" and list_output_words_part[i + 1] != "41":
             print("、", end='')
     i+=1
 print("\n")
