@@ -35,8 +35,21 @@ for item in list_output_words:
     print(item, end='')
     if list_output_words_part[i] == "25":
             print("。", end='')
-    if i != 0:
-        if list_output_words_part[i - 1] == "38":
+    if i > 0:
+        if list_output_words_part[i - 1] == "38" and list_output_words_part[i - 1] == "41":
+            print("、", end='')
+        if list_output_words_part[i] == "31" and list_output_words_part[i - 1] == "41":
+            print("。", end='')
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "38":
+            print("、", end='')
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "67":
+            print("、", end='')
+    if i > 1:
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 2] == "44":
+            print("、", end='')
+        if list_output_words_part[i] == "18" and list_output_words_part[i - 1] == "31" and list_output_words_part[i - 2] == "13":
+            print("、", end='')
+        if list_output_words_part[i] == "13" and list_output_words_part[i - 1] == "41":
             print("、", end='')
     i+=1
 print("\n")
