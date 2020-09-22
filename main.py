@@ -13,12 +13,9 @@ data = re.sub('[,.。、 ]', '', data)
 tagger = MeCab.Tagger("-F '%m %h ' -d /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd --eos-format=''")
 str_output = tagger.parse(data)
 
-# MeCab の結果を整形
-#mecab_formatted = str_output.replace("\nEOS", "")
 # MeCab の結果をプレビュー
 print("素のデータ: ")
 print(str_output + "\n")
-
 
 print("配列化: ")
 list_output = str_output.split(' ')
@@ -36,7 +33,6 @@ print("\n結果: ")
 # 結果を出力する
 for item in list_output_words:
     print(item, end='')
-    #print(list_output_words_part[i], end='')
     if list_output_words_part[i] == "25":
             print("。", end='')
     if i != 0:
