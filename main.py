@@ -14,7 +14,7 @@ mecab_output = tagger.parse(text)
 mecab_output = mecab_output[:-1] # 最後の _ を削除する。
 
 # [Debug] str_output の内容を出力する
-print("mecab_output: \n", mecab_output)
+# print("mecab_output: \n", mecab_output)
 
 # str_output に格納されている単語と品詞 ID をそれぞれの配列に分割する。
 ## まず、str_output を , ごとに区切り、配列に変換する。
@@ -28,13 +28,14 @@ words = mecab_split[0::2]
 id = mecab_split[1::2]
 
 # [Debug] 配列 words, id の内容を出力する。
-print("words: \n", words)
-print("id: \n", id)
+# print("words:\n", words)
+# print("id:\n", id)
 
 # 結果を出力する
 
 i = 0
 
+print("result:")
 for item in words:
     print(item, end='')
     if (id[i - 1] == "25") and id[i] == "67":
@@ -68,4 +69,5 @@ for item in words:
         if id[i - 1] == "36" and id[i] == "25":
             print("。", end='')
     i+=1
+
 print("\n")
