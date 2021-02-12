@@ -6,8 +6,9 @@ Convert sentences in Japanese into [さとちゃん (Twitter: @sato5128F)](https
 * unidic-lite
 * [mecab-ipadic-neologd](https://github.com/neologd/mecab-ipadic-neologd)
 ```
-pip install python3-mecab unidic-lite
+pip install python-mecab unidic-lite
 ```
+You may need to change path to dictionary in `main.py`.
 
 ## References
 * [さとちゃん言語学 - Togetter](https://togetter.com/li/1275761)
