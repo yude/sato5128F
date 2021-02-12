@@ -11,7 +11,7 @@ text = re.sub('[,.。、 ]', '', text)
 # MeCab で文章をパースする。配列には 「品詞で区切った単語」 -> 「品詞を識別するための ID」で格納される。
 tagger = MeCab.Tagger("-F%m,%h, -d /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd --eos-format=")
 mecab_output = tagger.parse(text)
-mecab_output = mecab_output[:-1] # 最後の _ を削除する。
+mecab_output = mecab_output[:-1] # 最後の , を削除する。
 
 # [Debug] str_output の内容を出力する
 # print("mecab_output: \n", mecab_output)
@@ -33,11 +33,13 @@ id = mecab_split[1::2]
 
 # 結果を出力する
 
-i = 0
+i = 0 # カウンター用
 
 print("result:")
 for item in words:
     print(item, end='')
+    
+    # 特定の品詞の出現の仕方を検出して、適宜句読点を追加する。
     if (id[i - 1] == "25") and id[i] == "67":
             print("、", end='')
     if i > 0:
@@ -51,7 +53,6 @@ for item in words:
             print("、", end='')
         if id[i] == "13" and id[i - 1] == "41":
             print("、", end='')
-
     if i > 1:
         if id[i] == "13" and id[i - 2] == "44":
             if id[i + 1] != "36":
