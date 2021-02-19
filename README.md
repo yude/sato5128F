@@ -1,4 +1,4 @@
-# [yudete](https://github.com/yudete) / sato5128F
+# sato5128F
 Convert sentences in Japanese into [さとちゃん (Twitter: @sato5128F)](https://twitter.com/sato5128F) format
 
 ## Dependencies
